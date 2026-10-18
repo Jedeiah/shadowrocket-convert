@@ -285,6 +285,51 @@ def write_links(jobs, stats):
     print(f"\n链接清单已写入 {path}")
 
 
+README_MARK_START = "<!-- CONFIG-LINKS:START -->"
+README_MARK_END = "<!-- CONFIG-LINKS:END -->"
+
+
+def write_readme_links(stats):
+    """把各配置的可复制 raw 链接写入 README.md 的标记块中。"""
+    if not BASE_RAW_URL:
+        return
+    try:
+        with open("README.md", encoding="utf-8") as fh:
+            text = fh.read()
+    except FileNotFoundError:
+        return
+    if README_MARK_START not in text or README_MARK_END not in text:
+        print("[warn] README.md 缺少链接标记，跳过自动更新", file=sys.stderr)
+        return
+    lines = [
+        README_MARK_START,
+        "",
+        "> 本节由 `convert.py` 自动生成（每次构建刷新），请勿手工修改。",
+        "",
+        "| 配置 | 说明 | 大小 |",
+        "|---|---|---|",
+    ]
+    for s in stats:
+        try:
+            size_kb = os.path.getsize(s["output"]) / 1024
+        except OSError:
+            size_kb = 0
+        lines.append(f"| `{s['id']}` | {s['title']} | {size_kb:,.0f} KB |")
+    lines += ["", "### 可复制链接", ""]
+    for s in stats:
+        url = f"{BASE_RAW_URL}/{s['output']}"
+        lines += [f"**{s['title']}**（`{s['id']}`）", "", "```", url, "```", ""]
+    lines += [README_MARK_END]
+    block = "\n".join(lines)
+    start = text.index(README_MARK_START)
+    end = text.index(README_MARK_END) + len(README_MARK_END)
+    new_text = text[:start] + block + text[end:]
+    if new_text != text:
+        with open("README.md", "w", encoding="utf-8") as fh:
+            fh.write(new_text)
+        print("README.md 配置链接已更新")
+
+
 def main():
     only = None
     if "--only" in sys.argv:
@@ -298,6 +343,7 @@ def main():
     for job in jobs:
         stats.append(build_conf(job))
     write_links(jobs, stats)
+    write_readme_links(stats)
     print("\n全部完成:")
     for s in stats:
         print(f"  {s['id']:<32} {s['groups']:>2} 分组 / {s['rules']:>6} 规则 / 跳过 {s['skipped']} 条 -> {s['output']}")

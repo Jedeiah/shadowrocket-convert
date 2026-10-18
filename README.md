@@ -81,6 +81,40 @@ flowchart LR
 - `acl4ssr-full-adblockplus` 规则量与体积较大，默认关闭；需要时修改其 `configs/*.json` 中的
   `"enabled": true` 即可启用。
 
+## 配置链接（自动生成）
+
+<!-- CONFIG-LINKS:START -->
+
+> 本节由 `convert.py` 自动生成（每次构建刷新），请勿手工修改。
+
+| 配置 | 说明 | 大小 |
+|---|---|---|
+| `acl4ssr-mini-ai` | ACL4SSR Online Mini_Ai（精简 + Ai平台 组） | 158 KB |
+| `acl4ssr-online-full` | ACL4SSR Online Full（与小猫同款） | 471 KB |
+| `acl4ssr-online` | ACL4SSR Online（原版 11 组） | 163 KB |
+
+### 可复制链接
+
+**ACL4SSR Online Mini_Ai（精简 + Ai平台 组）**（`acl4ssr-mini-ai`）
+
+```
+https://raw.githubusercontent.com/Jedeiah/shadowrocket-convert/main/dist/acl4ssr-mini-ai.conf
+```
+
+**ACL4SSR Online Full（与小猫同款）**（`acl4ssr-online-full`）
+
+```
+https://raw.githubusercontent.com/Jedeiah/shadowrocket-convert/main/dist/acl4ssr-online-full.conf
+```
+
+**ACL4SSR Online（原版 11 组）**（`acl4ssr-online`）
+
+```
+https://raw.githubusercontent.com/Jedeiah/shadowrocket-convert/main/dist/acl4ssr-online.conf
+```
+
+<!-- CONFIG-LINKS:END -->
+
 ## 快速开始
 
 ### 1. 创建仓库
