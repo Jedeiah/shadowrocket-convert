@@ -1,0 +1,9 @@
+{
+  "id": "acl4ssr-online-full",
+  "title": "ACL4SSR Online Full（与小猫同款）",
+  "enabled": true,
+  "ini": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full.ini",
+  "output": "dist/acl4ssr-online-full.conf",
+  "prepend_rules": [],
+  "append_rules": []
+}

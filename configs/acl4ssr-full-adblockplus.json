@@ -1,0 +1,9 @@
+{
+  "id": "acl4ssr-full-adblockplus",
+  "title": "ACL4SSR Online Full AdblockPlus（更强广告拦截）",
+  "enabled": false,
+  "ini": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_AdblockPlus.ini",
+  "output": "dist/acl4ssr-full-adblockplus.conf",
+  "prepend_rules": [],
+  "append_rules": []
+}

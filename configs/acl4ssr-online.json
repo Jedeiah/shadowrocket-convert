@@ -1,0 +1,9 @@
+{
+  "id": "acl4ssr-online",
+  "title": "ACL4SSR Online（原版 11 组）",
+  "enabled": true,
+  "ini": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini",
+  "output": "dist/acl4ssr-online.conf",
+  "prepend_rules": [],
+  "append_rules": []
+}

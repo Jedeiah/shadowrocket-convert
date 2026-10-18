@@ -1,0 +1,9 @@
+{
+  "id": "acl4ssr-mini-ai",
+  "title": "ACL4SSR Online Mini_Ai（精简 + Ai平台 组）",
+  "enabled": true,
+  "ini": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini_Ai.ini",
+  "output": "dist/acl4ssr-mini-ai.conf",
+  "prepend_rules": [],
+  "append_rules": []
+}
